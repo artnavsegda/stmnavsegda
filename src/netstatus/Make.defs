@@ -1,0 +1,21 @@
+############################################################################
+# telemetron/apps/netstatus/Make.defs
+# --------------------------------------------------------------------------
+# Author: Art Navsegda <artnavsegda@gmail.com>
+#
+# Подключение приложения netstatus
+# в систему сборки nuttx/apps
+#
+# Данный файл был автоматически сгенерирован и обычно не требует изменений.
+############################################################################
+
+ifeq ($(CONFIG_TELEMETRON_APP_NETSTATUS),y)
+# Здесь важный момент, что путь указывается не
+#   telemetron/apps/netstatus
+# а
+#   external/netstatus
+#
+# Это необходимо, т.к. директория `telemetron/apps` подключается к nuttx
+# как директория `nuttx/apps/external` посредством символьной ссылки.
+CONFIGURED_APPS += external/netstatus
+endif
